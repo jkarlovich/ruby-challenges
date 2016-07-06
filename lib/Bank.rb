@@ -15,42 +15,38 @@
 # yes
 # Thank you!
 
-
-
 def transaction(bal)
-puts "Your balance is #{bal}"
+  puts "Your balance is #{bal}"
 
-puts "What would you like to do? deposit, withdraw, check_balance"
-display = gets.chomp
+  puts 'What would you like to do? deposit, withdraw, check_balance'
+  display = gets.chomp
 
-if display == 'check_balance'
-  puts "Your current balance is #{bal}"
+  if display == 'check_balance'
+    puts "Your current balance is #{bal}"
 
-elsif display == 'withdraw'
-  puts "How much would you like to withdraw?"
-  withdraw = gets.chomp.to_i
-  bal = bal - withdraw
-  puts "You have withdrawn #{withdraw}.  Your balance is now #{bal}."
+  elsif display == 'withdraw'
+    puts 'How much would you like to withdraw?'
+    withdraw = gets.chomp.to_i
+    bal -= withdraw
+    puts "You have withdrawn #{withdraw}.  Your balance is now #{bal}."
 
-elsif display == 'deposit'
-  puts "How much would you like to deposit?"
-  deposit = gets.chomp.to_i
-  bal = bal + deposit
-  puts "You have deposited #{deposit}.  Your balance is now #{bal}."
+  elsif display == 'deposit'
+    puts 'How much would you like to deposit?'
+    deposit = gets.chomp.to_i
+    bal += deposit
+    puts "You have deposited #{deposit}.  Your balance is now #{bal}."
 
-else
-  puts "You have entered an incorrect transaction name"
-end
-puts "Are you done?"
-done = gets.chomp
+  else
+    puts 'You have entered an incorrect transaction name'
+  end
+  puts 'Are you done?'
+  done = gets.chomp
 
-if done == 'yes'
-  puts "Have a nice day!"
-else
-  transaction(bal)
-end
+  if done == 'yes'
+    puts 'Have a nice day!'
+  else
+    transaction(bal)
+  end
 end
 
 transaction(4000)
-
-

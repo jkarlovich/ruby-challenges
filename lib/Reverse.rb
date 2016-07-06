@@ -9,18 +9,18 @@
 # reverse_me
 # em_esrever
 
-puts "Enter a string"
+puts 'Enter a string'
 string = gets.chomp.split('')
 # puts string
-i = (string.length/2)
-while i > 0 do
-  letter = string.slice!(i-1, 1)
-  let = string.slice!(string.length-i, 1)
+i = (string.length / 2)
+while i > 0
+  letter = string.slice!(i - 1, 1)
+  let = string.slice!(string.length - i, 1)
   # puts "---------"
   # puts letter
   # puts let
-  string = string.insert(i-1, let)
-  string = string.insert(string.length-i+1, letter)
+  string = string.insert(i - 1, let)
+  string = string.insert(string.length - i + 1, letter)
   # puts "--------"
   # puts string
   i -= 1
